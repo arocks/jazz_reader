@@ -1,0 +1,11 @@
+{% extends "feed_two_pane.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Feeds{% endblock %}
+
+{% block feed_items %}
+  <h1>Add a new feed</h1>
+  {% crispy form %}
+{% endblock %}
