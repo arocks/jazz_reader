@@ -1,12 +1,6 @@
 # Jazz Reader
 
-Jazz Reader is a _short description_. It is built with [Python][0] using the [Django Web Framework][1].
-
-This project has the following basic apps:
-
-* App1 (short desc)
-* App2 (short desc)
-* App3 (short desc)
+Jazz Reader is a minimal news reader built with Django and Celery.
 
 ## Installation
 
@@ -25,3 +19,9 @@ Install all dependencies:
 Run migrations:
 
     python manage.py migrate
+
+Start Redis and Celery in seperate terminals or as daemons:
+
+    redis-server --port 6379
+    celery --app=dj_news.celery:app --loglevel=INFO worker
+    celery --app=dj_news.celery:app --loglevel=INFO beat -s /tmp/celerybeat-schedule
